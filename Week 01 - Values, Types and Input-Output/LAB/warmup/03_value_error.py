@@ -4,3 +4,6 @@
 value = float(input("Value: "))
 
 print(value)
+
+
+#becuase it makes use of deimal numbers you have to make use of "float"
