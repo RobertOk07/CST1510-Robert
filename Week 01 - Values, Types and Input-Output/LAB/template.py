@@ -2,40 +2,44 @@
 RECORD CHECK  -  my version
 ===========================
 
-Name  :
-Lane  :  AI / Cyber / IT      (delete two)
-Date  :
+Name  : Robert Dawid Okonski
+Lane  :   Cyber      (delete two)
+Date  : 29/09/26
 
 Run it:   python template.py
 
 Work through the numbered sections in order. Each one tells you what it must do.
 Delete these instructions as you replace them with your code.
 """
+#================================================================== INPUT
+source_IP= input("Hello Sir, what is your source IP? : ")
+failed_logins= float(input("Hello Sir, how many failed logins did you have?" ))
+total_attempts= float(input("Hello Sir, how many total attempts did you have?"))
 
-# ==================================================================== INPUT
-# 1. Ask the user for your three values.
-#
-#    - the first is TEXT      (a name, a hostname, an IP)  -> no conversion needed
-#    - the second is a NUMBER (use float(), not int())
-#    - the third  is a NUMBER (use float(), not int())
-#
-#    Remember: input() always gives back text.
-
-label = ""      # : replace with an input() call
-first = 0.0     # : replace with an input() call, converted
-second = 0.0    # : replace with an input() call, converted
-
+print("================================\nLane Check Cybersecurity\n================================")
+print("My source IP is : ",source_IP)
+print("Hello, i had : ",failed_logins, "today")
+print("Hello, i had : ",total_attempts, "today")
+print("=================================")
 
 # ================================================================== PROCESS
-# 2. Work out what you were NOT given.       [Typical and above]
-#
-#    - difference : how far the first is from the second
-#    - percent    : the first as a percentage of the second
-#
-#    Do not type the answers. Calculate them.
+source_IP= input("Hello Sir, what is your source IP? : ")
+failed_logins= float(input("Hello Sir, how many failed logins did you have?" ))
+total_attempts= float(input("Hello Sir, how many total attempts did you have?"))
 
-difference = 0.0   # 
-percent = 0.0      # 
+print("================================\nLane Check Cybersecurity\n================================")
+print(f"My source IP is : ",source_IP)
+print(f"Hello, i had : {failed_logins:>10.2f} failed logins")
+print(f"Hello, i had : {total_attempts:>10.2f} total attempts")
+print(f"The difference : {total_attempts-failed_logins:>10.2f}")
+print(f"The difference in percent: {(failed_logins-total_attempts)*100:>10.2f}","%")
+print("==================================")
+
+#in line 32-35 i used "":>10.2f" so make the numbers be in 2 decimal places and right alligned in 10 spaces
+
+
+
+
 
 
 # =================================================================== OUTPUT
