@@ -34,7 +34,7 @@ print(f"Hello, i had : {failed_logins:>10.2f} failed logins")
 print(f"Hello, i had : {total_attempts:>10.2f} total attempts")
 print(f"The difference : {total_attempts-failed_logins:>+10.2f}")
 print(f"The difference in percent: {(failed_logins/total_attempts)*100:>+10.2f}","%")
-print(f"Limit for total failed login reached : {limitfortotalattemps_reached:>+10.2f},try again in 24H ")
+print(f"Limit for total failed login reached : {limitfortotalattemps_reached:>+10.2f},try again in 24H")
 print("=" * 30)
 
 #in line 32-35 i used "":>10.2f" so make the numbers be in 2 decimal places and right aligned in 10 spaces
