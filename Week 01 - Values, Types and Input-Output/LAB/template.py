@@ -37,27 +37,14 @@ print(f"The difference in percent: {(failed_logins/total_attempts)*100:>+10.2f}"
 print(f"Limit for total failed login reached : {limitfortotalattemps_reached:>+10.2f},try again in 24H ")
 print("=" * 30)
 
-#in line 32-35 i used "":>10.2f" so make the numbers be in 2 decimal places and right alligned in 10 spaces
+#in line 32-35 i used "":>10.2f" so make the numbers be in 2 decimal places and right aligned in 10 spaces
 #for the Excellent i added the "+" to each difference here
 
-#for the Excellent i added a funtion which, when a total number of failed login attempts is reached you will be locked out. 
-#That is the idea, but how to actualy make the program stop is unknown to me. But i hope the idea makes sense.
+#for the Excellent i added a function which, when a total number of failed login attempts is reached you will be locked out. 
+#That is the idea, but how to actually make the program stop is unknown to me. But i hope the idea makes sense.
 # i made 3 to be the limit.
 
 # =================================================================== OUTPUT
-# 3. Print the report.
-#
-#    Threshold : print the three values you were given, inside a border
-#    Typical   : add difference and percent, 2 decimal places, right-aligned
-#    Excellent : difference always shows its sign, plus one line of your own
-#
-#    Useful:   f"{value:>10.2f}"    right-aligned, 2 decimal places
-#              f"{value:>+10.2f}"   the same, but always shows the sign
-# : your report lines go here
-
-
-
-
 # ==========================================================================
 # 4. Before you finish:
 #
