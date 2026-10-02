@@ -43,8 +43,9 @@ print("=" * 30)
 #for the Excellent i added a function which, when a total number of failed login attempts is reached you will be locked out. 
 #That is the idea, but how to actually make the program stop is unknown to me. But i hope the idea makes sense.
 # i made 3 to be the limit.
+#  when using "0" as value the error i get is "ZeroDivisionError: division by zero"
 
-# =================================================================== OUTPUT
+
 # ==========================================================================
 # 4. Before you finish:
 #
