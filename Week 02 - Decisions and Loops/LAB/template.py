@@ -14,7 +14,7 @@ Delete these instructions as you replace them with your code.
 
 # ==================================================================== INPUT
 lane_lable= ("IT")
-hostname_name= input("What is your host name(or quit) : ")
+hostname_name= input("What is your host name : ")
 gbused_storage= float(input(" How much GB did you use, Sir? : "))
 gbtotal_storage= float(input(" HOw much GB did you use in Total, Sir : "))
 overlimit_count= 0
@@ -22,6 +22,10 @@ overlimit_count= 0
 
 
 # ================================================================== PROCESS
+while True:
+    hostname_name= input("What is your host name : ")
+    hostname_name= "quit"
+    break
 if ((gbused_storage/gbtotal_storage)* 100) >= 100:
     status= ("OVER LIMIT")
     overlimit_count += 1    
@@ -29,10 +33,6 @@ elif ((gbused_storage/gbtotal_storage)* 100) >= 90:
     status=("WARNING")
 else:
     status=("OK")
-
-
-  
-    
 
 
 # =================================================================== OUTPUT
@@ -49,15 +49,7 @@ print("=" * 30)
 
 # it took me, some trial and error to get the allignment right
 # same goes for line 42, where to place the ":>5.2f" space funtion also took me trial and error to find out where the correct placement is.
-
-
-
-
-
-
-
-
-
+# i added the over limit counter,
 
 
 # ==========================================================================
