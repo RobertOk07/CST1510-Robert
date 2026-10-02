@@ -13,49 +13,51 @@ Delete these instructions as you replace them with your code.
 """
 
 # ==================================================================== INPUT
-# 1. Ask for your three values.
-#
-#    - the first is TEXT      (a name, a hostname, an IP)  -> no conversion needed
-#    - the second is a NUMBER (use float(), not int())
-#    - the third  is a NUMBER (use float(), not int())
+lane_lable= ("IT")
+hostname_name= input("What is your host name(or quit) : ")
+gbused_storage= float(input(" How much GB did you use, Sir? : "))
+gbtotal_storage= float(input(" HOw much GB did you use in Total, Sir : "))
+overlimit_count= 0
 
-label = ""      # replace with an input() call
-value = 0.0     # replace with an input() call, converted with float()
-limit = 0.0     # replace with an input() call, converted with float()
 
 
 # ================================================================== PROCESS
-# 2. Work out the difference and the percentage.       [Typical and above]
+if ((gbused_storage/gbtotal_storage)* 100) >= 100:
+    status= ("OVER LIMIT")
+    overlimit_count += 1    
+elif ((gbused_storage/gbtotal_storage)* 100) >= 90:
+    status=("WARNING")
+else:
+    status=("OK")
 
-difference = 0.0   # replace with your calculation
-percent = 0.0       # replace with your calculation
-# 3. Decide a status and store it in a variable called status.
-#
-#    Threshold : if / else        -> "OVER LIMIT" or "OK"
-#    Typical   : if / elif / else -> "OVER LIMIT" (100% or more),
-#                                     "WARNING" (90% or more), otherwise "OK"
 
-status = ""   # replace with your if / else (or if / elif / else)
+  
+    
 
 
 # =================================================================== OUTPUT
-# 4. Print the report.
-#
-#    Threshold : the three values you were given, plus status, inside a border
-#    Typical   : add difference and percent, 2 decimal places, right-aligned
-#    Excellent : wrap sections 1-4 in a loop so you can check as many records
-#                as you like in one run - type "quit" as the label to stop.
-#                Keep count of how many came back OVER LIMIT and print that
-#                once, after the loop ends.
+print("=" * 30)
+print("RECORD CHECK  : ",hostname_name)
+print("=" * 30)
+print("Used     : ",gbused_storage)
+print("Total    : ",gbtotal_storage)
+print(f"Free     : {gbtotal_storage - gbused_storage:>5.2f}")
+print(f"Percent  : {(gbused_storage / gbtotal_storage) * 100:>5.2f}, %")
+print("Status   : ",status)
+print("Over limit : ",overlimit_count)
+print("=" * 30)
 
-print()
-print("=" * 34)
-print(f"  RECORD CHECK  -  {label}")
-print("=" * 34)
+# it took me, some trial and error to get the allignment right
+# same goes for line 42, where to place the ":>5.2f" space funtion also took me trial and error to find out where the correct placement is.
 
-# your report lines go here
 
-print("=" * 34)
+
+
+
+
+
+
+
 
 
 # ==========================================================================
