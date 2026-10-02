@@ -49,7 +49,7 @@ print("=" * 30)
 
 # it took me, some trial and error to get the allignment right
 # same goes for line 42, where to place the ":>5.2f" space funtion also took me trial and error to find out where the correct placement is.
-# i added the over limit counter,
+# i added the over limit counter, and included a "while True" so you can check as many records as you like.
 
 
 # ==========================================================================
