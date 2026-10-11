@@ -3,7 +3,7 @@ RECORD CHECK  -  my version
 ===========================
 
 Name  : Robert Dawid Okonski
-Lane  :   Cyber      (delete two)
+Lane  : Cyber      
 Date  : 29/09/26
 
 Run it:   python template.py
@@ -34,16 +34,17 @@ print(f"Hello, i had : {failed_logins:>10.2f} failed logins")
 print(f"Hello, i had : {total_attempts:>10.2f} total attempts")
 print(f"The difference : {total_attempts-failed_logins:>+10.2f}")
 print(f"The difference in percent: {(failed_logins/total_attempts)*100:>+10.2f}","%")
-print(f"Limit for total failed login reached : {limitfortotalattemps_reached:>+10.2f},try again in 24H")
+print(f"Limit for total failed login attempts reached: {limitfortotalattemps_reached:>+10.2f},try again in 24H")
 print("=" * 30)
+
 
 #in line 32-35 i used "":>10.2f" so make the numbers be in 2 decimal places and right aligned in 10 spaces
 #for the Excellent i added the "+" to each difference here
 
 #for the Excellent i added a function which, when a total number of failed login attempts is reached you will be locked out. 
 #That is the idea, but how to actually make the program stop is unknown to me. But i hope the idea makes sense.
-# i made 3 to be the limit.
-#  when using "0" as value the error i get is "ZeroDivisionError: division by zero"
+#i made 3 to be the limit.
+# when using "0" as value the error i get is "ZeroDivisionError: division by zero"
 
 
 # ==========================================================================

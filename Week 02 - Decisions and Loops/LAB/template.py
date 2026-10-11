@@ -13,45 +13,42 @@ Delete these instructions as you replace them with your code.
 """
 
 # ==================================================================== INPUT
-lane_label= ("IT")
-hostname_name= input("What is your host name : ")
-gbused_storage= float(input(" How much GB did you use, Sir? : "))
-gbtotal_storage= float(input(" HOw much GB did you use in Total, Sir : "))
-overlimit_count= 0
-
-
-
-# ================================================================== PROCESS
 while True:
-    hostname_name= input("What is your host name : ")
-    hostname_name= "quit"
-    break
-if ((gbused_storage/gbtotal_storage)* 100) >= 100:
-    status= ("OVER LIMIT")
-    overlimit_count += 1    
-elif ((gbused_storage/gbtotal_storage)* 100) >= 90:
-    status=("WARNING")
-else:
-    status=("OK")
-
-
-# =================================================================== OUTPUT
-print("=" * 30)
-print("RECORD CHECK  : ",hostname_name)
-print("=" * 30)
-print("Used     : ",gbused_storage)
-print("Total    : ",gbtotal_storage)
-print(f"Free     : {gbtotal_storage - gbused_storage:>5.2f}")
-print(f"Percent  : {(gbused_storage / gbtotal_storage) * 100:>5.2f}, %")
-print("Status   : ",status)
-print("Over limit : ",overlimit_count)
-print("=" * 30)
+    hostname_name= input("What is your host name or quit,Sir?: ")
+    if hostname_name == "quit":
+         break
+    lane_label= ("IT")
+    gbused_storage= float(input(" How much GB did you use, Sir? : "))
+    gbtotal_storage= float(input(" HOw much GB did you use in Total, Sir : "))
+    overlimit_count= 0
+   # ==================================================================PROCESS
+    if ((gbused_storage/gbtotal_storage)* 100) >= 100:
+        status= ("OVER LIMIT")
+        overlimit_count += 1
+    elif ((gbused_storage/gbtotal_storage)* 100) >= 90:
+        status=("WARNING")
+    else:
+        status=("OK")
+    # =================================================================== OUTPUT
+    print("=" * 30)
+    print("RECORD CHECK  : ",hostname_name)
+    print("=" * 30)
+    print("Used     : ",gbused_storage)
+    print("Total    : ",gbtotal_storage)
+    print(f"Free     : {gbtotal_storage - gbused_storage:>5.2f}")
+    print(f"Percent  : {(gbused_storage/gbtotal_storage) * 100:>5.2f}, %")
+    print("Status   : ",status)
+    print("Over limit : ",overlimit_count)
+    print("=" * 30)
 
 # it took me, some trial and error to get the alignment right
-# same goes for line 42, where to place the ":>5.2f" space function also took me trial and error to find out where the correct placement is.
+# same goes for line 38-39, where to place the ":>5.2f" space function also took me trial and error to find out where the correct placement is.
 # i added the over limit counter, and included a "while True" so you can check as many records as you like.
 # when using "0" as value the error i get is "ZeroDivisionError: division by zero"
 
+# For the excellent one when I added the while true, I had indentation errors. 
+# Through trial and error i found out i had to indent everything after the "while true" function to the same line. 
+#I found out that you can shift all your code to the right with the shift key. That made it much easier instead of manually doing it XD
 
 # ==========================================================================
 # 5. Before you finish:
