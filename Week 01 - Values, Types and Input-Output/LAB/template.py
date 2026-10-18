@@ -15,18 +15,21 @@ Delete these instructions as you replace them with your code.
 source_IP= input("Hello Sir, what is your source IP? : ")
 failed_logins= float(input("Hello Sir, how many failed logins did you have?" ))
 total_attempts= float(input("Hello Sir, how many total attempts did you have?"))
+"""These are all im inputs"""
 
 print("================================\nLane Check Cybersecurity\n================================")
 print("My source IP is : ",source_IP)
 print("Hello, i had : ",failed_logins, "today")
 print("Hello, i had : ",total_attempts, "today")
 print("=" * 30)
+"""These are my outputs for the Threshold"""
 
 # ================================================================== Typical+Excellent
 source_IP= input("Hello Sir, what is your source IP? : ")
 failed_logins= float(input("Hello Sir, how many failed logins did you have?" ))
 total_attempts= float(input("Hello Sir, how many total attempts did you have?"))
 limitfortotalattemps_reached= input("failed_logins //3")
+"""For the Excellent: i added a function which, when a total number of failed login attempts is reached you will be locked out."""
 
 print("================================\nLane Check Cybersecurity\n================================")
 print(f"My source IP is : ",source_IP)
@@ -36,7 +39,6 @@ print(f"The difference : {total_attempts-failed_logins:>+10.2f}")
 print(f"The difference in percent: {(failed_logins/total_attempts)*100:>+10.2f}","%")
 print(f"Limit for total failed login attempts reached: {limitfortotalattemps_reached:>+10.2f},try again in 24H")
 print("=" * 30)
-
 
 #in line 32-35 i used "":>10.2f" so make the numbers be in 2 decimal places and right aligned in 10 spaces
 #for the Excellent i added the "+" to each difference here
