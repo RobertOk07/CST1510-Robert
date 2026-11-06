@@ -3,7 +3,7 @@ RECORD CHECK  -  my version
 ===========================
 
 Name  : Robert Okonski
-Lane  :  IT      
+Lane  :  Cyber Security    
 Date  : 25/10/2026
 
 Run it:   python template.py
@@ -13,57 +13,51 @@ Delete these instructions as you replace them with your code.
 """
 
 # ====================================================================== CLASS
-# 1. Define a class called Record.
-#
-#    Threshold : __init__(self, label, value, limit) storing all three as
-#                attributes. No methods yet.
-#    Typical   : add a method status(self) that returns "OVER LIMIT" (100%+),
-#                "WARNING" (90%+) or "OK", worked out from self.value and
-#                self.limit. Give it a one-line docstring.
-#    Excellent : also add over_limit_count as a class-level running total -
-#                see the note below.
+class Record:
+    over_limit_count = 0
+    #Instructions say to add the over limit counter under my class-level.
+    def __init__(self, label, value,limit):
+        self.label= label
+        self.value= value
+        self.limit= limit
 
-# your class goes here
-
-
+    def status(self):
+        """ Calculares the percentage and gives back a record based on the limit and value"""
+        percentage = (self.value/self.limit) * 100
+        if percentage >= 100:
+            Record.over_limit_count += 1 #I am counting the records that are over limit
+            return "OVER LIMIT"
+        elif percentage >= 90:
+            return "WARNING"
+        else:
+            return "OK"
 # ==================================================================== RECORDS
-# 2. Create your records.
-#
-#    Threshold : create at least 2 Record instances directly in the code.
-#    Typical   : same, but now print each one's .status() as well.
-#    Excellent : instead, write load_records(path) that reads label,value,limit
-#                lines from a file and returns a list of Record objects. Make
-#                your own data file, one record per line.
-
-records = []   # replace with your code
-
-
+def load_records(path):
+    """Reads the label,value,limit lines from a file and return a list of Records."""
+    records = []
+    # I created my own file in my LAB folder with my own values
+    with open(path) as f:
+        for line in f:
+            label, value, limit = line.strip().split(",")
+            records.append(Record(label,float(value), float(limit)))
+    return records
+records = load_records("records.txt")# Here i am loading my file so my function can make use of it. I am having problem with loading it, i keep getting back an error.
+#  File "/Users/robertok/Desktop/Robert OK/ROBERT/School/Middelsex/Year 1/CST1510 Info/CST1510/Week 05 - Classes and Objects/LAB/template.py", line 39, in load_records
+# This is the error """"with open(path) as f:
+        #~~~~^^^^^^
+#FileNotFoundError: [Errno 2] No such file or directory: 'records.txt'""""
+# I don't understand why python is saying the file cant be found. It's in my LAB folder.
 # ==================================================================== OUTPUT
-# 3. Print a report for each record.
-#
-#    Threshold : label, value, limit, inside a border.
-#    Typical   : add the result of .status().
-#    Excellent : also keep a running count of how many came back OVER LIMIT
-#                across every record, and print that once, after the loop.
-#                (Simplest: a plain variable outside the loop, same pattern
-#                as Week 4. If you want it to live ON the object instead,
-#                that is a stretch worth trying - but a variable is enough.)
 
 for record in records:
-    print()
-    print("=" * 34)
-    print(f"  RECORD CHECK  -  {record.label}")
-    print("=" * 34)
-
-    # your report lines go here
-
-    print("=" * 34)
-
+    status= record.status()
+    print("=" * 50)
+    print("Record label:", record.label)
+    print("Failed login attempts:", record.value)
+    print("Total attempts:", record.limit)
+    print("Status:", status)
+    print("=" * 50)
+    print("OVER THE LIMIT COUNT:", Record.over_limit_count)
 
 # ==========================================================================
-# 4. Before you finish:
-#
-#    [ ] Run it and check every record's numbers by hand
-#    [ ] Check every method only reads/changes its OWN object (self) -
-#        nothing reaches outside itself
-#    [ ] Check every method and __init__ has a one-line docstring
+

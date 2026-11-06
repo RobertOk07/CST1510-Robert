@@ -42,10 +42,10 @@ def load_records(path):
                 "limit": float(limit)
             })
     return records
-
-records= load_records("Week 04 - Lists, Dictionaries and Files/LAB/rob.txt")
+load_records =("rob.txt") # I have a problem with loading my file, i dont know how to fix it.
 # =============================================================== PROCESS + OUTPUT
-for record in records:
+for record in load_records:
     difference,percent, status = check_record(record["value"], record["limit"])
+    
     print_report(record["label"], record["value"], record["limit"],difference,percent,status)
 # ==========================================================================
