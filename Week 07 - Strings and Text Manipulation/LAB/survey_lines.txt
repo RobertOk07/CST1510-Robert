@@ -1,0 +1,5 @@
+Survey_2026, rating=87 ,age=23
+SURVEY_2027, rating=100,AGE=30
+survey_2028 ,rating=45, age =19
+SURVEY_2029, RATING=93 , AGE=40
+survey_2030,rating=60 , age=25
